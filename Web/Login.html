@@ -7,20 +7,48 @@
 
 </head>
 <body>
-<form class="layui-form" action="">
-    <div class="layui-form-item">
-        <label class="layui-form-label">用户名</label>
-        <div class="layui-input-block">
-            <input type="text" name="userName" lay-verify="required" autocomplete="off" placeholder="请输入用户名" class="layui-input">
-        </div>
+<div class="layui-row">
+    <div class="layui-col-xs6 layui-col-sm6 layui-col-md4">
+        <div class="grid-demo layui-bg-red">移动：6/12 | 平板：6/12 | 桌面：4/12</div>
     </div>
-    <div class="layui-form-item">
-        <label class="layui-form-label">密码</label>
-        <div class="layui-input-block">
-            <input type="password" name="username" lay-verify="required" placeholder="请输入密码" autocomplete="off" class="layui-input">
-        </div>
+    <div class="layui-col-xs6 layui-col-sm6 layui-col-md4">
+        <form class="layui-form" action="">
+            <div class="layui-form-item">
+                <label class="layui-form-label">用户名</label>
+                <div class="layui-input-block">
+                    <input type="text" name="userName" lay-verify="required" autocomplete="off" placeholder="请输入用户名" class="layui-input">
+                </div>
+            </div>
+            <div class="layui-form-item">
+                <label class="layui-form-label">密码</label>
+                <div class="layui-input-block">
+                    <input type="password" name="username" lay-verify="required" placeholder="请输入密码 " autocomplete="off" class="layui-input">
+                </div>
+            </div>
+
+        </form>
     </div>
-</form>
+    <div class="layui-col-xs4 layui-col-sm12 layui-col-md4">
+        <div class="grid-demo layui-bg-blue">移动：4/12 | 平板：12/12 | 桌面：4/12</div>
+    </div>
+
+</div>
+
 </body>
 <script src="../JavaScript/layui/layui.js"></script>
+<scriptss>
+    layui.use(['form', 'layedit', 'laydate'], function(){
+        var form = layui.form,1,layer = layui.layer;
+
+        //监听提交
+        form.on('submit(demo1)', function(data){
+            layer.alert(JSON.stringify(data.field), {
+                title: '最终的提交信息'
+            })
+            return false;
+        });
+
+
+    });
+</scriptss>
 </html>
